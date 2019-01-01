@@ -72,6 +72,7 @@ group :test do
   gem 'poltergeist'
   gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 3.8'
+  gem 'rubocop-rspec'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
