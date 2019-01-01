@@ -15,7 +15,7 @@ RSpec.describe NavigationHelper, type: :helper do
   end
 
   context 'non-signed in user' do
-    before(:each) { helper.stub(:user_signed_in?).and_return(false) }
+    before(:each) { allow(helper).to receive(:user_signed_in?).and_return(false) }
 
     context '#collapsible_links_partial_path' do
       it "returns non_signed_in_links partial's path" do
