@@ -1,4 +1,8 @@
-class PagesController < ApplicationController
+# frozen_string_literal: true
 
-  def index; end
+# top-level class
+class PagesController < ApplicationController
+  def index
+    @posts = Post.limit(5)
+  end
 end
