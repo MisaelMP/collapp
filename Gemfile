@@ -37,6 +37,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'mini_magick', '~> 4.8'
 # gem devise for authentication
 gem 'devise'
+gem 'will_paginate', '~> 3.1.0'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -74,6 +75,7 @@ group :test do
   gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 3.8'
   gem 'rubocop-rspec'
+  gem 'rubocop'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
