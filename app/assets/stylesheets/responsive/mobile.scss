@@ -51,3 +51,13 @@
     padding: 10px 0;
   }
 }
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .navbar-brand {
+    padding-left: 4rem;
+  }
+
+  .navbar-nav {
+    padding-right: 4rem;
+  }
+}
