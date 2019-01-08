@@ -40,4 +40,9 @@ class PostsController < ApplicationController
       _posts = Post.by_category(branch, category).search(search)
     end
   end
+
+  respond_to do |format|
+    format.html
+    format.js { render partial: 'posts/posts_pagination_page' }
+  end
 end
