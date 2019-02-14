@@ -8,7 +8,10 @@ class Post < ApplicationRecord
   scope :by_category, lambda { |branch, category_name|
     joins(:category).where(categories: { name: category_name, branch: branch })
   }
-
+  validates :title, presence: true, length: { minimum: 5, maximum: 255 }
+  validates :content, presence: true, length: { minimum: 20, maximum: 1000 }
+  validates :category_id, presence: true
+  
   scope :by_branch, lambda { |branch|
     joins(:category).where(categories: { branch: branch })
   }
