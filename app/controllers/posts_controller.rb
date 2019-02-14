@@ -1,22 +1,11 @@
 # frozen_string_literal: true
 
-before_action :redirect_if_not_signed_in, only: [:new]
 # top-level class
 class PostsController < ApplicationController
+  before_action :redirect_if_not_signed_in, only: [:new]
+
   def show
     @post = Post.find(params[:id])
-  end
-
-  def hobby
-    posts_for_branch(params[:action])
-  end
-
-  def study
-    posts_for_branch(params[:action])
-  end
-
-  def team
-    posts_for_branch(params[:action])
   end
 
   def new
@@ -32,6 +21,18 @@ class PostsController < ApplicationController
     else
       redirect_to root_path
     end
+  end
+
+  def hobby
+    posts_for_branch(params[:action])
+  end
+
+  def study
+    posts_for_branch(params[:action])
+  end
+
+  def team
+    posts_for_branch(params[:action])
   end
 
   private
