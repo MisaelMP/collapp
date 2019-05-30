@@ -110,7 +110,7 @@ RSpec.describe PostsHelper, type: :helper do
         eq 'shared/empty_partial'
       )
     end
-    
+
     it "returns an empty partial's path" do
       allow(helper).to receive(:user_signed_in?).and_return(false)
       expect(helper.contact_user_partial_path).to(
