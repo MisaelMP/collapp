@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 require './app/services/group/add_user_to_conversation_service.rb'
 
@@ -7,11 +9,11 @@ describe Group::AddUserToConversationService do
     let(:new_user) { create(:user) }
     let(:conversation) { create(:group_conversation, users: [user]) }
     let(:add_user_to_conversation) do
-      Group::AddUserToConversationService.new({
+      Group::AddUserToConversationService.new(
         conversation_id: conversation.id,
         new_user_id: new_user.id,
         added_by_id: user.id
-      }).call
+      ).call
     end
 
     it 'adds user to a group conversation' do
