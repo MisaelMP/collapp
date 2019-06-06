@@ -3,7 +3,7 @@
 class OrderConversationsService
   def initialize(params)
     @user = params[:user]
-  end
+end
 
   # get and order conversations by last messages' dates in descending order
   def call
