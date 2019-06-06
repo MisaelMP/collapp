@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe ApplicationHelper, :type => :helper do
+RSpec.describe ApplicationHelper, type: :helper do
   context '#private_conversations_windows' do
     let(:conversations) { conversations = create_list(:private_conversation, 2) }
 
