@@ -9,12 +9,10 @@ class Group::NewConversationService
 
   def call
     creator = User.find(@creator_id)
-    pchat_opposed_user = Private::Conversation.find(@private_conversation_id)
-                                              .opposed_user(creator)
+    pchat_opposed_user = Private::Conversation.find(@private_conversation_id).opposed_user(creator)
     new_user_to_chat = User.find(@new_user_id)
     new_group_conversation = Group::Conversation.new
-    new_group_conversation.name = '' + creator.name + ', ' +
-                                  pchat_opposed_user.name + ', ' +
+    new_group_conversation.name = '' + creator.name + ', ' + pchat_opposed_user.name + ', ' +
                                   new_user_to_chat.name
     if new_group_conversation.save
       arr_of_users_ids = [creator.id, pchat_opposed_user.id, new_user_to_chat.id]

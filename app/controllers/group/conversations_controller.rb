@@ -5,10 +5,10 @@ class Group::ConversationsController < ApplicationController
     @conversation = create_group_conversation
     add_to_conversations unless already_added?
 
-    respond_to do |format|
-      format.js
-    end
-end
+      respond_to do |format|
+        format.js
+      end
+  end
 
   def update
     Group::AddUserToConversationService.new(

@@ -1,5 +1,5 @@
-var conversation = $('body').find("[data-gconversation-id='" + "<%= @conversation.id %>" + "']"); var chat_windows_count = $('.conversation-window').length + 1; if (conversation.length !== 1) { $('body').append("<%= j(render 'group/conversations/conversation',\ conversation: @conversation,\ user: current_user) %>"); conversation = $('body').find("[data-gconversation-id='" + "<%= @conversation.id %>" +
-                                "']");
+var conversation = $('body').find("[data-gconversation-id='" + "<%= @conversation.id %>" + "']");
+var chat_windows_count = $('.conversation-window').length + 1; if (conversation.length !== 1) { $('body').append("<%= j(render 'group/conversations/conversation',conversation: @conversation, user: current_user) %>"); conversation = $('body').find("[data-gconversation-id='" + "<%= @conversation.id %>" + "']");
 }
 
 // Toggle conversation window after its creation

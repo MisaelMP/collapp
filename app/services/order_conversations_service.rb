@@ -7,8 +7,7 @@ end
 
   # get and order conversations by last messages' dates in descending order
   def call
-    all_private_conversations = Private::Conversation.all_by_user(@user.id)
-                                                     .joins(:messages)
+    all_private_conversations = Private::Conversation.all_by_user(@user.id).joins(:messages)
     all_group_conversations = @user.group_conversations.joins(:messages)
     all_conversations = all_private_conversations + all_group_conversations
 
