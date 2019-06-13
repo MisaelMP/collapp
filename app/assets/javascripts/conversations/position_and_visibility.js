@@ -1,17 +1,18 @@
-chat_windows_count = $('.conversation-window').length;
-// if the last visible chat window is not set and conversation windows exist
-// set the last_visible_chat_window variable
-if (gon.last_visible_chat_window == null && chat_windows_count > 0) {
-    gon.last_visible_chat_window = chat_windows_count;
-}
-// if gon.hidden_chats doesn't exist, set its value
-if (gon.hidden_chats == null) {
-    gon.hidden_chats = 0;
-}
-window.addEventListener('resize', hideShowChatWindow);
+$(document).on('turbolinks:load', function() {
+    chat_windows_count = $('.conversation-window').length;
+    // if the last visible chat window is not set and conversation windows exist
+    // set the last_visible_chat_window variable
+    if (gon.last_visible_chat_window == null && chat_windows_count > 0) {
+        gon.last_visible_chat_window = chat_windows_count;
+    }
+    // if gon.hidden_chats doesn't exist, set its value
+    if (gon.hidden_chats == null) {
+        gon.hidden_chats = 0;
+    }
+    window.addEventListener('resize', hideShowChatWindow);
 
-positionChatWindows();
-hideShowChatWindow();
+    positionChatWindows();
+    hideShowChatWindow();
 });
 
 function positionChatWindows() {

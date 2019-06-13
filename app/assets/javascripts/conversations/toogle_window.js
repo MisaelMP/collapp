@@ -19,12 +19,13 @@ $(document).on('turbolinks:load', function() {
                 conversation_heading = panel.find('.conversation-heading');
                 conversation_heading.css('width', '360px');
 
-            } else { // show conversation menu options
+            } else {
+                // show conversation menu options
                 conversation_heading = panel.find('.conversation-heading');
                 conversation_heading.css('width', '320px');
-                panel.find('.add-people-to-chat,\
-                            .add-user-to-contacts,\
-                            .contact-request-sent').show();
+                panel.find('.add-people-to-chat',
+                            '.add-user-to-contacts',
+                            '.contact-request-sent').show();
                 // focus textarea
                 $('form textarea', this).focus();
             }

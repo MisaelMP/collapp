@@ -1,4 +1,4 @@
-const conversation = $('body').find("[data-pconversation-id='" + "<%= @conversation.id %>" + "']"); const chat_windows_count = $('.conversation-window').length + 1; if (conversation.length !== 1) { $('body').append("<%= j(render 'private/conversations/conversation',\ conversation: @conversation,\ user: current_user) %>"); conversation = $('body').find("[data-conversation-id='" + "<%= @conversation.id %>" +
+var conversation = $('body').find("[data-pconversation-id='" + "<%= @conversation.id %>" + "']"); var chat_windows_count = $('.conversation-window').length + 1; if (conversation.length !== 1) { $('body').append("<%= j(render 'private/conversations/conversation', conversation: @conversation, user: current_user) %>"); conversation = $('body').find("[data-conversation-id='" + "<%= @conversation.id %>" +
                                 "']");
 }
 
